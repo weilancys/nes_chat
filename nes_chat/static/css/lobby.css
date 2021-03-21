@@ -1,0 +1,22 @@
+.title-box {
+    margin-top: 3em;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+.title-box h1 i {
+    width: 64px;
+    height: 64px;
+}
+
+.nes-field {
+    margin: 1em;
+}
+
+.btn-join-field {
+    text-align: center;
+}
+
+.alert-box {
+    text-align: center;
+}

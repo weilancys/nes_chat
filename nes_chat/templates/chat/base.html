@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nes.css/2.0.0/css/nes.min.css" integrity="sha512-yLfn7V0hubHgkT9/iqdUZI5uyhxIXobm6WynYpG0zRdUnDzH2DkaajPJ05CLjHVCX7RjX4UFw6ypW7sXPIr97Q==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+    {% block css %}{% endblock %}
+    <title>LB's Chat - {% block title %}{% endblock %}</title>
+</head>
+<body>
+    {% block main %}{% endblock %}
+</body>
+    {% block js %}{% endblock %}
+</html>

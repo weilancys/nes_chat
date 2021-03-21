@@ -1,0 +1,138 @@
+{% extends 'chat/base.html' %}
+
+{% block title %}Room{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/room.css') }}">
+{% endblock %}
+
+{% block main %}
+<div class="container">
+    <div class="room">
+        <div class="sidebar-section">
+            <div class="logo">
+                <i class="nes-jp-logo"></i>
+                <span class="nes-text is-primary">LB's Chat</span>
+            </div>
+            <div class="room-name">
+                <a href="#" class="nes-badge"><span class="is-success">{{ room }}</span></a>
+                <a href="{{ url_for('chat.chat_lobby') }}"><i class="nes-icon close is-small"></i></a>
+            </div>
+            <div class="users nes-container with-title">
+                <p class="title">online: <span class="online-count">2</span></p>
+                <ul class="user-list nes-list is-disc">
+                    <li>lightblue</li>
+                    <li>weilancys</li>
+                </ul>
+            </div>
+        </div>
+        <div class="chat-section">
+            <section class="chat-messages nes-container">
+                <section class="message-list">
+                    <section class="message -left">
+                        <i class="nes-bcrikko"></i>
+                        <!-- Balloon -->
+                        <div class="nes-balloon from-left">
+                            <p>Hello NES.css</p>
+                        </div>
+                    </section>
+
+                    <section class="message -right">
+                        <!-- Balloon -->
+                        <div class="nes-balloon from-right">
+                            <p>Good morning. </p>
+                        </div>
+                        <i class="nes-bcrikko is-small"></i>
+                    </section>
+
+                    <!-- more messages start -->
+                    <section class="message -right">
+                        <!-- Balloon -->
+                        <div class="nes-balloon from-right">
+                            <p>Good morning. </p>
+                        </div>
+                        <i class="nes-bcrikko is-small"></i>
+                    </section>
+                    <section class="message -right">
+                        <!-- Balloon -->
+                        <div class="nes-balloon from-right">
+                            <p>Good morning. </p>
+                        </div>
+                        <i class="nes-bcrikko is-small"></i>
+                    </section>
+                    <section class="message -right">
+                        <!-- Balloon -->
+                        <div class="nes-balloon from-right">
+                            <p>Good morning. </p>
+                        </div>
+                        <i class="nes-bcrikko is-small"></i>
+                    </section>
+                    <section class="message -right">
+                        <!-- Balloon -->
+                        <div class="nes-balloon from-right">
+                            <p>Good morning. </p>
+                        </div>
+                        <i class="nes-bcrikko is-small"></i>
+                    </section>
+                    <section class="message -right">
+                        <!-- Balloon -->
+                        <div class="nes-balloon from-right">
+                            <p>Good morning. </p>
+                        </div>
+                        <i class="nes-bcrikko is-small"></i>
+                    </section>
+                    <section class="message -right">
+                        <!-- Balloon -->
+                        <div class="nes-balloon from-right">
+                            <p>Good morning. </p>
+                        </div>
+                        <i class="nes-bcrikko is-small"></i>
+                    </section>
+                    <section class="message -right">
+                        <!-- Balloon -->
+                        <div class="nes-balloon from-right">
+                            <p>Good morning. </p>
+                        </div>
+                        <i class="nes-bcrikko is-small"></i>
+                    </section>
+                    <section class="message -right">
+                        <!-- Balloon -->
+                        <div class="nes-balloon from-right">
+                            <p>Good morning. </p>
+                        </div>
+                        <i class="nes-bcrikko is-small"></i>
+                    </section>
+                    <section class="message -right">
+                        <!-- Balloon -->
+                        <div class="nes-balloon from-right">
+                            <p>Good morning. </p>
+                        </div>
+                        <i class="nes-bcrikko is-small"></i>
+                    </section>
+                    <!-- more messages end -->
+                </section>
+            </section>
+            <div class="chat-input nes-container">
+                <input type="hidden" id="nickname" value="{{ nickname }}">
+                <input type="hidden" id="room" value="{{ room }}">
+                <form class="message-form" action="">
+                    <div class="field nickname-box">
+                        <span>{{ nickname }}</span>
+                    </div>
+                    <div class="field msg-box">
+                        <textarea id="msg" class="nes-textarea" autocomplete="off"></textarea>
+                    </div>
+                    <div class="field btn-send-box">
+                        <button id="btn-send" class="nes-btn is-success">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+    <script src="{{ url_for('static', filename='js/socket.io.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,6 @@
+
+source venv/Scripts/activate
+export FLASK_APP=nes_chat
+export FLASK_ENV=development
+
+echo "dev env activated."
