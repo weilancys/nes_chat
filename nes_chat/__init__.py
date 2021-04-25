@@ -6,10 +6,13 @@ from .chat import socketio
 def create_app(test_config=None):
     app = Flask(__name__)
 
+    # config
     app.config["SECRET_KEY"] = 'dev'
 
+    # blueprints / routes
     app.register_blueprint(chat_bp)
 
-    socketio.init_app(app)
+    # extensions
+    #socketio.init_app(app) # add flask-socketio support outside of create_app function
 
     return app

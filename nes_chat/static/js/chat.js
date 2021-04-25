@@ -30,9 +30,12 @@ function make_msg_node(msg, nickname, room, ts) {
     }
 
     // msg body inside balloon
-    const p = document.createElement("p");
-    p.innerHTML = msg;
-    balloon.appendChild(p);
+    const p_name = document.createElement("p");
+    const p_msg = document.createElement("p");
+    p_name.innerHTML = `${nickname} ${new Date(ts * 1000).toLocaleString()}`;
+    p_msg.innerHTML = msg;
+    balloon.appendChild(p_name);
+    balloon.appendChild(p_msg);
 
 
     // append icon and balloon to wrapper
@@ -56,6 +59,7 @@ socket.on('connect', function () {
     const message_list = document.querySelector(".message-list");
     const user_list = document.querySelector(".user-list");
     const online_count = document.querySelector(".online-count");
+    const btn_send = document.querySelector("#btn-send");
 
     socket.emit('join', nickname, room);
 
@@ -85,6 +89,12 @@ socket.on('connect', function () {
         online_count.textContent = users.length;
     });
 
-    msg.
+    msg.addEventListener("keypress", function (e) {
+        const key = e.keyCode;
+        if (key === 13) {
+            e.preventDefault();
+            btn_send.click();
+        }
+    });
 });
 

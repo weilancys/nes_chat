@@ -8,6 +8,7 @@ import json
 bp = Blueprint("chat", __name__)
 socketio = SocketIO()
 
+
 @bp.route('/')
 def chat_lobby():
     return render_template('chat/lobby.html')
@@ -40,6 +41,7 @@ def user_join_handler(nickname, room):
         flash("user is already online.", 'error')
         return redirect(url_for('chat.chat_lobby'))
     update_user_list(user.room)
+
 
 @socketio.on('disconnect')
 def user_disconnect_handler():
