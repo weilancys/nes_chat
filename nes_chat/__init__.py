@@ -13,6 +13,6 @@ def create_app(test_config=None):
     app.register_blueprint(chat_bp)
 
     # extensions
-    #socketio.init_app(app) # add flask-socketio support outside of create_app function
+    socketio.init_app(app) # add flask-socketio support outside of create_app function
 
     return app
