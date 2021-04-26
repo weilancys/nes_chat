@@ -4,3 +4,4 @@ __pycache__/
 dist/
 build/
 .vscode/
+activate_dev_env
